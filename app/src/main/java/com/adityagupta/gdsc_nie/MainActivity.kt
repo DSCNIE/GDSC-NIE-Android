@@ -1,5 +1,6 @@
 package com.adityagupta.gdsc_nie
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
@@ -10,7 +11,9 @@ import dagger.hilt.android.AndroidEntryPoint
 import com.adityagupta.gdsc_nie.presentation.main.home.HomeFragment
 import com.adityagupta.gdsc_nie.presentation.main.home.about.AboutFragment
 import com.adityagupta.gdsc_nie.presentation.main.home.blogs.BlogsFragment
+import com.adityagupta.gdsc_nie.presentation.main.home.bug.BugReportActivity
 import com.adityagupta.gdsc_nie.presentation.main.home.connect.ConnectFragment
+import com.adityagupta.gdsc_nie.presentation.main.home.events.details.EventDetailsActivity
 
 
 @AndroidEntryPoint
@@ -28,8 +31,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-
-
 
         fm.beginTransaction().add(R.id.homeActivityFragmentContainerView, aboutFragment, "2").hide(aboutFragment).commit();
         fm.beginTransaction().add(R.id.homeActivityFragmentContainerView, connectFragment, "3").hide(connectFragment).commit();
@@ -57,6 +58,17 @@ class MainActivity : AppCompatActivity() {
                 R.id.blogBottomNavigation -> {
                     fm.beginTransaction().hide(active).show(blogsFragment).commit();
                     active = blogsFragment;
+                    true
+                }
+                else -> false
+            }
+        }
+
+        binding.topAppBar.setOnMenuItemClickListener() {
+            when(it.itemId){
+                R.id.reportBug -> {
+                    val intent = Intent(this , BugReportActivity::class.java)
+                    startActivity(intent)
                     true
                 }
                 else -> false
