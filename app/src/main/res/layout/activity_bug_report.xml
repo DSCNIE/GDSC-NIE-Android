@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/main_dark_blue"
+                tools:context=".presentation.main.home.bug.BugReportActivity">
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="0dp"
+                    android:layout_height="300dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/error6" />
+
+                <TextView
+                    android:id="@+id/brfFoundABug"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/apercu_pro_regular"
+                    android:text="Found a bug?!"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/imageView6"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+                <TextView
+                    android:id="@+id/brfFoundABugText"
+                    style="@style/text_grey_without_border"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/apercu_pro_regular"
+                    android:lineSpacingExtra="8sp"
+                    android:text="Hurricane Rosa brought widespread flooding to northwestern Mexico and the Southwestern United States in late September 2018, leading to one death in Mexico and two in the U.S. state of Arizona. Rosa originated from an Atlantic tropical wave that crossed the West African coast on September 6"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/brfFoundABug" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Help us out!!"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/brfFoundABugText"
+                    app:layout_constraintTop_toBottomOf="@+id/brfFoundABugText" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/brSubmitBug"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="156dp"
+                    android:text="SUBMIT"
+                    android:textColor="@color/google_color_red"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:strokeColor="@color/google_color_red" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/brNameEditText"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="16dp"
+                    android:hint="Name"
+                    android:textColorHint="@color/google_color_blue"
+                    app:boxStrokeColor="@color/edit_text_color"
+                    app:helperTextTextColor="@color/google_color_blue"
+                    app:hintTextColor="@color/google_color_blue"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView6"
+                    app:layout_constraintTop_toBottomOf="@+id/textView6"
+                    app:placeholderTextColor="@color/google_color_blue"
+                    app:prefixTextColor="@color/google_color_blue"
+                    app:strokeWidth="2dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:cursorVisible="true"
+                        android:textCursorDrawable="@drawable/cursor"
+                        android:fontFamily="@font/apercu_pro_regular"
+                        android:textColor="@color/google_color_yellow"
+                        android:textColorHint="@color/google_color_yellow"
+                        app:strokeColor="@color/google_color_green" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/brBugDesEditText"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:hint="Describe the bug"
+                    app:helperTextTextColor="@color/google_color_blue"
+                    app:hintTextColor="@color/google_color_blue"
+                    app:boxBackgroundColor="@android:color/transparent"
+                    app:boxStrokeWidth="2dp"
+                    app:boxStrokeColor="@color/edit_text_color"
+                    app:strokeWidth="2dp"
+                    android:textColorHint="@color/google_color_blue"
+                    app:layout_constraintBottom_toTopOf="@+id/brSubmitBug"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/brNameEditText">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/apercu_pro_regular"
+                        android:gravity="top"
+                        android:textCursorDrawable="@drawable/cursor"
+                        android:textColor="@color/google_color_yellow"
+                        android:textColorHint="@color/google_color_yellow" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</layout>

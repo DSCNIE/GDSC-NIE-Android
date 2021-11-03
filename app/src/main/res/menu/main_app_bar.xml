@@ -4,10 +4,10 @@
 
 
     <item
-        android:id="@+id/search"
-        android:icon="@drawable/ic_search_24dp"
-        android:title="search"
-        android:contentDescription="search icon"
+        android:id="@+id/reportBug"
+        android:icon="@drawable/ic_baseline_bug_report_24"
+        android:title="@string/report_bug"
+        android:contentDescription="@string/bug_icon"
         app:showAsAction="ifRoom" />
 
 
